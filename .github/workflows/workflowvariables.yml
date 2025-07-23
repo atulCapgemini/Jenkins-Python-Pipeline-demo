@@ -20,7 +20,7 @@ jobs:
         run: |
          pip install --upgrade pip
          pip install -r requirements.txt
-   job2:
+  job2:
     runs-on: ${{RUNNER_NAME}}
     steps:
       - name: clone the reop
