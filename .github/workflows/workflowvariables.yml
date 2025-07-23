@@ -5,7 +5,7 @@ on:
  push:
 env:
  PYTHON_VERSION: 3.9 
- RUNNER_NAME: "ubuntu-latest"
+ RUNNER_NAME: ubuntu-latest
 jobs:
   job1:
     runs-on: ${{RUNNER_NAME}}
