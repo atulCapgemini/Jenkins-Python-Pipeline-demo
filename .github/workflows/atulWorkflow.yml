@@ -1,0 +1,26 @@
+---
+name: AtulJainPythonWorkflow
+on: 
+ workflow_dispatch:
+ push:
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+     steps:
+      - name: clone the reop
+        uses: actions/checkout@v4
+      - name: Setup python
+        uses: actions/setup-python@v5
+        with:
+         python-version: "3.9"
+      - name: Install Dependencies
+        run: |
+         pip install --upgrade pip
+         pip install -r requirements.txt
+      - name: Set python path
+        run: echo "PYTHONPATH" = $GITHUB_WORKSPACE >> $GITHUB_ENV # GITHUB_WORKSPACE IS READYMADE GITHUB ENV VARIABLE
+      - name: Python link
+        run : flake8 app.py tests/
+      - name: Run tests 
+        run: | # python tests --junitxml=reports/test-results.xml --cov=app- 
+         python tests --cov=app --cov-report=xml  
