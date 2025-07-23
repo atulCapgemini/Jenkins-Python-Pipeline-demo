@@ -8,7 +8,7 @@ env:
  RUNNER_NAME: ubuntu-latest
 jobs:
   job1:
-    runs-on: ${{ env.RUNNER_NAME }}
+    runs-on: ubuntu-latest
     steps:
       - name: clone the reop
         uses: actions/checkout@v4
@@ -20,6 +20,7 @@ jobs:
         run: |
          pip install --upgrade pip
          pip install -r requirements.txt
+         echo  ${{ env.RUNNER_NAME }}
   job2:
     runs-on: ubuntu-latest
     steps:
