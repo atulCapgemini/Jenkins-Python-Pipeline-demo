@@ -6,7 +6,7 @@ on:
 jobs:
   job1:
     runs-on: ubuntu-latest
-     steps:
+    steps:
       - name: clone the reop
         uses: actions/checkout@v4
       - name: Setup python
