@@ -14,7 +14,7 @@ jobs:
       - name: Setup python
         uses: actions/setup-python@v5
         with:
-         python-version: ${{ PYTHON_VERSION }}
+         python-version: $PYTHON_VERSION
       - name: Install Dependencies
         run: |
          pip install --upgrade pip
@@ -27,7 +27,7 @@ jobs:
       - name: Setup python
         uses: actions/setup-python@v5
         with:
-         python-version: ${{ PYTHON_VERSION }}
+         python-version: $PYTHON_VERSION
       - name: Install Dependencies
         run: |
          pip install --upgrade pip
