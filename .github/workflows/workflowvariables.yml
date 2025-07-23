@@ -5,30 +5,30 @@ on:
  push:
 env:
  PYTHON_VERSION: 3.9 
- RUNNER_NAME: ubuntu-latest
+ RUNNER_NAME: "ubuntu-latest"
 jobs:
   job1:
-    runs-on: ${{RUNNER_NAME}}
+    runs-on: ${{ RUNNER_NAME }}
     steps:
       - name: clone the reop
         uses: actions/checkout@v4
       - name: Setup python
         uses: actions/setup-python@v5
         with:
-         python-version: ${{PYTHON_VERSION}}
+         python-version: ${{ PYTHON_VERSION }}
       - name: Install Dependencies
         run: |
          pip install --upgrade pip
          pip install -r requirements.txt
   job2:
-    runs-on: ${{RUNNER_NAME}}
+    runs-on: ${{ RUNNER_NAME }}
     steps:
       - name: clone the reop
         uses: actions/checkout@v4
       - name: Setup python
         uses: actions/setup-python@v5
         with:
-         python-version: ${{PYTHON_VERSION}}
+         python-version: ${{ PYTHON_VERSION }}
       - name: Install Dependencies
         run: |
          pip install --upgrade pip
