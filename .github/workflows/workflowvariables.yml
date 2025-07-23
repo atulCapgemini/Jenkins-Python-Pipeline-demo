@@ -4,7 +4,7 @@ on:
  workflow_dispatch:
  push:
 env:
- PYTHON_VERSION: 3.14.0-beta.4
+ PYTHON_VERSION: 3.9
 jobs:
   job1:
     runs-on: ubuntu-latest
@@ -14,7 +14,7 @@ jobs:
       - name: Setup python
         uses: actions/setup-python@v5
         with:
-         python-version: $PYTHON_VERSION
+         python-version: ${{ env.PYTHON_VERSION }}
       - name: Install Dependencies
         run: |
          pip install --upgrade pip
@@ -27,7 +27,7 @@ jobs:
       - name: Setup python
         uses: actions/setup-python@v5
         with:
-         python-version: $PYTHON_VERSION
+         python-version: ${{ env.PYTHON_VERSION }}
       - name: Install Dependencies
         run: |
          pip install --upgrade pip
