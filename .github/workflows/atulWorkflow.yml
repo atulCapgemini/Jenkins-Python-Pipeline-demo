@@ -22,5 +22,4 @@ jobs:
       - name: Python link
         run : flake8 app.py tests/
       - name: Run tests 
-        run: | # python tests --junitxml=reports/test-results.xml --cov=app- 
-         python tests --cov=app --cov-report=xml  
+        run:  python tests --cov=app --cov-report=xml  
