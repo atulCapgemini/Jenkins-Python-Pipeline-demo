@@ -4,7 +4,7 @@ on:
  workflow_dispatch:
  push:
 env:
- PYTHON_VERSION: 3.9
+ PYTHON_VERSION: 3.14.0-beta.4
 jobs:
   job1:
     runs-on: ubuntu-latest
