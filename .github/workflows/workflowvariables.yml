@@ -4,11 +4,10 @@ on:
  workflow_dispatch:
  push:
 env:
- PYTHON_VERSION: "3.9" 
- RUNNER_NAME: "ubuntu-latest"
+ PYTHON_VERSION: "3.9"
 jobs:
   job1:
-    runs-on: ${{ RUNNER_NAME }}
+    runs-on: ubuntu-latest
     steps:
       - name: clone the reop
         uses: actions/checkout@v4
@@ -21,7 +20,7 @@ jobs:
          pip install --upgrade pip
          pip install -r requirements.txt
   job2:
-    runs-on: ${{ RUNNER_NAME }}
+    runs-on: ubuntu-latest
     steps:
       - name: clone the reop
         uses: actions/checkout@v4
