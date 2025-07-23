@@ -5,9 +5,10 @@ on:
  push:
 env:
  PYTHON_VERSION: 3.9
+ RUNNER_NAME: ubuntu-latest
 jobs:
   job1:
-    runs-on: ubuntu-latest
+    runs-on: ${{ env.RUNNER_NAME }}
     steps:
       - name: clone the reop
         uses: actions/checkout@v4
